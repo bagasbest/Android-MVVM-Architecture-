@@ -1,4 +1,4 @@
-package com.example.masterclass.mvvm_beginner.network.data
+package com.example.masterclass.mvvm_beginner.network.response
 
 data class GetCharacterByIdResponse(
     val created: String = "",

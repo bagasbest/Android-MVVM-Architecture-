@@ -1,4 +1,4 @@
-package com.example.masterclass.mvvm_beginner.network.data
+package com.example.masterclass.mvvm_beginner.network
 
 import retrofit2.Response
 import java.lang.Exception

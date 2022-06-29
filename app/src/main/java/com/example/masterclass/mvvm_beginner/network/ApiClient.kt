@@ -1,7 +1,6 @@
 package com.example.masterclass.mvvm_beginner.network
 
-import com.example.masterclass.mvvm_beginner.network.data.GetCharacterByIdResponse
-import com.example.masterclass.mvvm_beginner.network.data.SimpleResponse
+import com.example.masterclass.mvvm_beginner.network.response.GetCharacterByIdResponse
 import retrofit2.Response
 
 class ApiClient(

@@ -1,7 +1,7 @@
 package com.example.masterclass.mvvm_beginner
 
 import com.example.masterclass.mvvm_beginner.network.NetworkLayer
-import com.example.masterclass.mvvm_beginner.network.data.GetCharacterByIdResponse
+import com.example.masterclass.mvvm_beginner.network.response.GetCharacterByIdResponse
 
 class SharedRepository {
 

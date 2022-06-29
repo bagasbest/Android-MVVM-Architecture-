@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.example.masterclass.databinding.ActivityMainBinding
+import com.example.masterclass.mvvm_beginner.epoxy.CharacterDetailsEpoxyController
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,30 +17,27 @@ class MainActivity : AppCompatActivity() {
         ViewModelProvider(this)[SharedViewModel::class.java]
     }
 
+    private val epoxyController = CharacterDetailsEpoxyController()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        viewModel.refreshCharacter(54)
         viewModel.characterByIdLiveData.observe(this) { response ->
+          epoxyController.characterResponse = response
             if (response == null) {
                 Toast.makeText(this, "Unsuccessful network call!", Toast.LENGTH_SHORT).show()
                 return@observe
             }
-
-            binding.apply {
-                textView.text = response.name
-                status.text = response.status
-                origin.text = response.origin.name
-                species.text = response.species
-                gender.text = response.gender
-
-                Glide.with(this@MainActivity)
-                    .load(response.image)
-                    .into(headerImageView)
-            }
         }
+
+        viewModel.refreshCharacter(54)
+
+        binding.apply {
+            epoxyRecyclerView.setControllerAndBuildModels(epoxyController)
+        }
+
     }
 
     override fun onDestroy() {

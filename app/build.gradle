@@ -6,6 +6,11 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
 }
 
+//Epoxy
+kapt {
+    correctErrorTypes = true
+}
+
 android {
     compileSdk 32
 
@@ -76,5 +81,13 @@ dependencies {
     //Android Navigation Architecture
     implementation 'androidx.navigation:navigation-fragment:2.4.2'
     implementation 'androidx.navigation:navigation-ui-ktx:2.4.2'
+
+    //Epoxy
+    def epoxyVersion = "4.4.1"
+    implementation "com.airbnb.android:epoxy:$epoxyVersion"
+    kapt("com.airbnb.android:epoxy-processor:$epoxyVersion")
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
 }
