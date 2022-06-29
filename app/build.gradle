@@ -57,12 +57,12 @@ dependencies {
     //Kotlin Coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2'
+    def lifecycle_version = "2.4.1"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
 
     // Glide for image loader
     implementation 'com.github.bumptech.glide:glide:4.13.0'
-
-    //ViewModel and LiveData
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2'
 
     //Kedein Dependency Injection
     implementation 'org.kodein.di:kodein-di-generic-jvm:6.2.1'
